@@ -1,0 +1,97 @@
+# frozen_string_literal: true
+
+require 'application_system_test_case'
+
+class JobsTest < ApplicationSystemTestCase
+  setup do
+    @job = jobs(:one)
+  end
+
+  test 'job page should be home page' do
+    visit root_url
+    assert_selector 'h1', text: 'Jobs'
+  end
+
+  test 'visiting the index' do
+    visit jobs_url
+    assert_selector 'h1', text: 'Jobs'
+  end
+
+  test 'creating a Job' do
+    visit jobs_url
+    click_on 'New Job'
+
+    fill_in 'Name', with: @job.name
+    click_on 'Create Job'
+
+    assert_text 'Job was successfully created'
+    click_on 'Back'
+  end
+
+
+  test 'a new job should have Job at the top of its show page' do
+    create_job
+    assert_selector 'h1', text: 'Job'
+    click_on 'Back'
+  end
+
+  test 'the job form should allow entering a description' do
+    visit jobs_url
+    click_on 'New Job'
+    assert_selector 'input#job_name'
+  end
+
+  test 'the job description should appear on the job show page' do
+    visit jobs_url
+    click_on 'New Job'
+    fill_in 'Name', with: @job.name
+    fill_in 'Description', with: 'This is a description'
+    click_on 'Create Job'
+    assert_text 'This is a description'
+    click_on 'Back'
+  end
+
+  test 'a link to jobs should appear at the top ov every page' do
+    create_job()
+    visit me
+  end
+
+
+  test 'the job description should appear on the job index page' do
+    visit jobs_url
+    click_on 'New Job'
+    fill_in 'Name', with: @job.name
+    fill_in 'Description', with: 'This is a description'
+    click_on 'Create Job'
+    click_on 'Back'
+    # should be on the index page at this point
+    assert_text 'This is a description'
+  end
+  # Create and save a job in the database
+  def create_job
+    visit jobs_url
+    click_on 'New Job'
+    fill_in 'Name', with: @job.name
+    click_on 'Create Job'
+  end
+
+  test 'updating a Job' do
+    visit jobs_url
+    click_on 'Edit', match: :first
+
+    fill_in 'Name', with: @job.name
+    click_on 'Update Job'
+
+    assert_text 'Job was successfully updated'
+    click_on 'Back'
+  end
+
+  test 'destroying a Job' do
+    visit jobs_url
+    page.accept_confirm do
+      click_on 'Destroy', match: :first
+    end
+
+    assert_text 'Job was successfully destroyed'
+  end
+end

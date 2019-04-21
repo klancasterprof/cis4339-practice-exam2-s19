@@ -1,0 +1,62 @@
+% Created 2019-04-20 Sat 18:54
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\setcounter{secnumdepth}{3}
+\author{Keith Lancaster}
+\date{\today}
+\title{CIS 4339 Practice Exam 2, S 2019}
+\hypersetup{
+ pdfauthor={Keith Lancaster},
+ pdftitle={CIS 4339 Practice Exam 2, S 2019},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.2 (Org mode 9.2.3)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+Run the command \texttt{rails db:seed} to generate the required data for this exam before beginning the problems.
+
+\section{Problems}
+\label{sec:orgb5b90c6}
+\begin{enumerate}
+\item Modify the application so that a Job has a description
+\begin{itemize}
+\item The form should be modified to allow the description to be entered, and the
+show and index pages modified so that the description is visible.
+\end{itemize}
+\item Modify the page that shows a single job to have the title "Job" in an h1 tag
+at the top of the page
+\item Add a div that appears at the top of \emph{every} page that includes a link to the
+Job index page
+\item Add a method to the job that calculates the total time for the job based
+on the total of the time required for the tasks associated with the job.
+\begin{itemize}
+\item Display the time on the job page \emph{and} on the jobs index page in its own column
+\end{itemize}
+\item Modify the task model so that an error message is displayed if the task description is not entered
+\item Add the \texttt{kaminari} gem to the project
+(\url{https://github.com/kaminari/kaminari}) and make the necessary
+modifications so that the job index page shows 30 jobs at a time and has a
+link to move forward or backward (the default link provided by the gem)
+\item Modify the tasks index page so that it shows the job name in the job
+column (instead of the job hash)
+\item Modify the task form so that is has a dropdown menu for the job. In the
+dropdown, the \emph{name} of the job should be shown.
+\item Add the Rails admin gem (\url{https://github.com/sferik/rails\_admin}) to the
+application using the default url of "/admin"
+\end{enumerate}
+\end{document}

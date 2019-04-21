@@ -1,0 +1,30 @@
+#+TITLE: CIS 4339 Practice Exam 2, S 2019
+#+OPTIONS: toc:nil num:3 H:4 ^:nil pri:t
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="org.css"/>
+Run the command =rails db:seed= to generate the required data for this exam before beginning the problems.
+
+** Problems
+   1) Modify the application so that a Job has a description
+      - The form should be modified to allow the description to be entered, and the
+        show and index pages modified so that the description is visible.
+   2) Modify the page that shows a single job to have the title "Job" in an h1 tag
+      at the top of the page
+   3) Add a div that appears at the top of /every/ page that includes a link to the
+      Job index page
+   4) Add a method to the job that calculates the total time for the job based
+      on the total of the time required for the tasks associated with the job.
+      - Display the time on the job page /and/ on the jobs index page in its own column
+   5) Modify the task model so that an error message is displayed if the task description is not entered
+   6) Add the =kaminari= gem to the project
+      (https://github.com/kaminari/kaminari) and make the necessary
+      modifications so that the job index page shows 30 jobs at a time and has a
+      link to move forward or backward (the default link provided by the gem)
+   7) Modify the tasks index page so that it shows the job name in the job
+      column (instead of the job hash)
+   8) Modify the task form so that is has a dropdown menu for the job. In the
+      dropdown, the /name/ of the job should be shown.
+   9) Add the Rails admin gem (https://github.com/sferik/rails_admin) to the
+      application using the default url of "/admin"
+
+
+ 
