@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 2019_04_20_222400) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.decimal "wholesale_cost"
   end
 
   create_table "tasks", force: :cascade do |t|
